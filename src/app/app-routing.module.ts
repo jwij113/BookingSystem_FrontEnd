@@ -9,6 +9,10 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'admin', component: AdminComponent, children: [
     {
+      path: '', 
+      component: AdminCalendarComponent, 
+    },
+    {
       path: 'calendar', 
       component: AdminCalendarComponent, 
     },
@@ -23,4 +27,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

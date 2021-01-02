@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './admin-setting.component.html',
   styleUrls: ['./admin-setting.component.scss']
 })
+
 export class AdminSettingComponent implements OnInit {
 
   constructor() { }
