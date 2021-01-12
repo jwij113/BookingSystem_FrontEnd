@@ -12,34 +12,28 @@
     <div style="margin-top:40px;"></div>
 
     <div class="year-title">Year</div>
-    <div class="year-option" *ngFor="let item of yearRange; index as i;" 
-        [ngClass]="{'selected' : item== yearSelected}" >
-        {{item}}
+    <div class="year-option"  style="cursor:pointer;" 
+         (click)="changeYear(item); changeCalendarWeek();" *ngFor="let item of yearRange; index as i;" 
+        [ngClass]="{'selected' : item== yearSelected}">
+        {{item}} 
     </div>
-
 
     <div style="clear:both"></div>
 
     <div class="month-title">Month</div>
 
-    <div class="month-option" [ngClass]="{'selected' : 1 == monthSelected}">January</div>
-    <div class="month-option" [ngClass]="{'selected' : 2 == monthSelected}">Febuary</div>
-    <div class="month-option" [ngClass]="{'selected' : 3 == monthSelected}">March</div>
-    <div class="month-option" [ngClass]="{'selected' : 4 == monthSelected}">April</div>
-    <div class="month-option" [ngClass]="{'selected' : 5 == monthSelected}">May</div>
-    <div class="month-option" [ngClass]="{'selected' : 6 == monthSelected}">June</div>
-    <div class="month-option" [ngClass]="{'selected' : 7 == monthSelected}">July</div>
-    <div class="month-option" [ngClass]="{'selected' : 8 == monthSelected}">August</div>
-    <div class="month-option" [ngClass]="{'selected' : 9 == monthSelected}">September</div>
-    <div class="month-option" [ngClass]="{'selected' : 10 == monthSelected}">October</div>
-    <div class="month-option" [ngClass]="{'selected' : 11 == monthSelected}">November</div>
-    <div class="month-option" [ngClass]="{'selected' : 12 == monthSelected}">December</div>
+    <div class="month-option"  style="cursor:pointer;" 
+         (click)="changeMonth(i+1); changeCalendarWeek();" *ngFor="let item of monthRange; index as i;" 
+        [ngClass]="{'selected' : (i+1)== monthSelected}">
+        {{item}} 
+    </div>
 
     <div class="day-title">Day</div>
 
     
-    <div class="day-option" *ngFor="let item of dayRange; index as i;" 
-    [ngClass]="{'selected' : item== daySelected}">
+    <div class="day-option" style="cursor:pointer;" 
+        (click)="changeDay(item); changeCalendarWeek();" *ngFor="let item of dayRange; index as i;" 
+        [ngClass]="{'selected' : item== daySelected}">
         {{item}}
     </div>
 
