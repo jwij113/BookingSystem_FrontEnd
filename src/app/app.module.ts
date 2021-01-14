@@ -7,6 +7,12 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminCalendarComponent } from './admin-calendar/admin-calendar.component';
 import { AdminSettingComponent } from './admin-setting/admin-setting.component';
+import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { MAT_DATE_LOCALE } from '@angular/material/core'
 
 @NgModule({
   declarations: [
@@ -14,13 +20,18 @@ import { AdminSettingComponent } from './admin-setting/admin-setting.component';
     LoginComponent,
     AdminComponent,
     AdminCalendarComponent,
-    AdminSettingComponent
+    AdminSettingComponent,
+    AdminScheduleComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

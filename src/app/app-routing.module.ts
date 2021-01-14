@@ -4,6 +4,7 @@ import { AdminCalendarComponent } from './admin-calendar/admin-calendar.componen
 import { AdminSettingComponent } from './admin-setting/admin-setting.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
+import { AdminScheduleComponent} from './admin-schedule/admin-schedule.component';;
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -15,6 +16,10 @@ const routes: Routes = [
     {
       path: 'calendar', 
       component: AdminCalendarComponent, 
+    },
+    {
+      path: 'schedule', 
+      component: AdminScheduleComponent, 
     },
     {
       path: 'setting',

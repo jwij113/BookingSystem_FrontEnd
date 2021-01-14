@@ -66,21 +66,59 @@ float:left;
 }
 
 .day-option{
-width:30px; 
-height:50px;
-background: #ccc;
-text-align:center;
-padding-top: 10px;
-margin:1px;
-float:left;
+    width:30px; 
+    height:50px;
+    background: #ccc;
+    text-align:center;
+    padding-top: 10px;
+    margin:1px;
+    float:left;
 }
 
 .day-option.selected{
-width:30px; 
-height:50px;
-background: #cfe;
-text-align:center;
-padding-top: 10px;
-margin:1px;
-float:left;
+    width:30px; 
+    height:50px;
+    background: #cfe;
+    text-align:center;
+    padding-top: 10px;
+    margin:1px;
+    float:left;
+}
+
+.dailyTitle{
+    width:120px;
+    height:70px;
+    background: rgb(235, 110, 93);
+    text-align:center;
+    padding-top:10px;
+    display:inline-block;
+    margin:1px;
+}
+
+.dailyTime{
+    width:120px;
+    height:50px;
+    background: rgb(255, 223, 164);
+    text-align:center;
+    padding-top:10px;
+    display:inline-block;
+    margin:1px;
+}
+
+.timeTitle{
+    width:120px;
+    height:70px;
+    background: #cfe; 
+    text-align:center;
+    padding-top:10px;
+    display:inline-block;
+}
+
+.time{
+    width:120px;
+    height:50px;
+    background: #cfe; 
+    text-align:center;
+    padding-top:10px;
+    display:inline-block;
 }

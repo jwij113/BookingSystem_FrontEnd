@@ -17,6 +17,8 @@ export class AdminCalendarComponent implements OnInit {
   dayRange: Array<number>;
   yearRange: Array<number>;
   monthRange: Array<string>;
+  timeRange : Array<String>;
+  weekdayRange : Array<String>;
   dateParam: string = "";
   
   constructor() { 
@@ -31,7 +33,9 @@ export class AdminCalendarComponent implements OnInit {
                        "August", "September", "October",
                        "November", "December"
                       ]
-
+    this.timeRange = ["9.00", "10.00", "11.00", "12.00", "13.00",
+                      "14.00", "15.00", "16.00", "17.00"]
+    this.weekdayRange = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"]                  
     this.yearSelected = this.currentDate.getFullYear();
     this.monthSelected = this.currentDate.getMonth()+1;
     this.daySelected = this.currentDate.getDate();    

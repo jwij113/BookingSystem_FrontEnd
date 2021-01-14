@@ -28,6 +28,8 @@
         {{item}} 
     </div>
 
+    <div style="clear:both"></div>
+
     <div class="day-title">Day</div>
 
     
@@ -36,7 +38,36 @@
         [ngClass]="{'selected' : item== daySelected}">
         {{item}}
     </div>
+    <div style="clear:both"></div>
 
+    <div style="height:50px;"></div>
+    
+
+    <div style="margin: 0 auto; width:1000px; ">
+        <div class="timeTitle" >Time</div>
+        <div class="dailyTitle" style="margin:1px; cursor:pointer;"  
+            *ngFor="let item of weekdayRange; index as i;" >
+                {{item}}
+        </div>
+    </div>
+
+    <div style="margin: 0 auto; width:1000px; ">
+
+        <ng-container *ngFor="let item of timeRange;">
+            <div class="time" >{{item}}</div>
+
+            <div class="dailyTime" style="margin:1px; cursor:pointer;"  
+            *ngFor="let item of weekdayRange; index as i;" >
+                &nbsp;
+            </div> 
+    
+        </ng-container>
+        
+           
+        
+        
+    </div>
+ 
    
 
 
