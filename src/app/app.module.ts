@@ -12,7 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-import { MAT_DATE_LOCALE } from '@angular/material/core'
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { PublicComponent } from './public/public.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core'
     AdminComponent,
     AdminCalendarComponent,
     AdminSettingComponent,
-    AdminScheduleComponent
+    AdminScheduleComponent,
+    PublicComponent
   ],
   imports: [
     BrowserModule,
