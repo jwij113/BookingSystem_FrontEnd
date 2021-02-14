@@ -12,7 +12,6 @@ import {routes} from '../app-routing.module';
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
-  let injector: TestBed;
   let httpMock: HttpTestingController;
   let location: Location;
   let router:Router;
@@ -28,7 +27,6 @@ describe('LoginComponent', () => {
     })
     .compileComponents();
 
-    injector = getTestBed();
     httpMock = TestBed.inject(HttpTestingController);
     router = TestBed.inject(Router);
     location = TestBed.inject(Location);

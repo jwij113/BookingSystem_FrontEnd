@@ -1,11 +1,10 @@
 
 <div style="width:1076px;">
 
-    <div style="text-align:center; margin-top:50px;">
+    <div *ngIf="officerSelectShow" style="text-align:center; margin-top:50px;">
         Officer:
         <select>
-            <option>Joko</option>
-            <option>Herman</option>
+            <option *ngFor="let item of officerList; index as i;">{{item.firstName}} {{item.lastName}}</option>
         </select>
     </div>
 
