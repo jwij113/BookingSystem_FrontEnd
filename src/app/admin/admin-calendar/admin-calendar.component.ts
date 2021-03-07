@@ -54,6 +54,7 @@ export class AdminCalendarComponent implements OnInit {
 
 
   async initOfficerDropDownAndSetOfficer(){
+
     await this.http.post("http://localhost:8080/user/isadmin", this.cookieService.get("sessionID") ).toPromise().then(
       val=> {if (<Boolean> val==true)
                   {
@@ -75,6 +76,7 @@ export class AdminCalendarComponent implements OnInit {
             error => console.log(error)
           ); 
     }
+    
   }
   
   changeYear(year:number){

@@ -3,8 +3,8 @@
 
     <div *ngIf="officerSelectShow" style="text-align:center; margin-top:50px;">
         Officer:
-        <select>
-            <option *ngFor="let item of officerList; index as i;">{{item.firstName}} {{item.lastName}}</option>
+        <select [(ngModel)]="selectedOfficer">
+            <option *ngFor="let item of officerList; index as i;" [value]="item.id" >{{item.firstName}} {{item.lastName}}</option>
         </select>
     </div>
 
@@ -67,15 +67,5 @@
         
     </div>
  
-   
-
-
-
-
-
-
-
-
-
 
 </div>

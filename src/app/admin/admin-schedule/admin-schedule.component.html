@@ -1,19 +1,31 @@
 <div style="width:1076px;">
 
-    
+<form [formGroup]="bookingTimeForm">
+
+
+
 <div style="height:30px;"></div>
 <h2>Create Schedule</h2>
 <div style="height:20px;"></div>
 
-<div class="row mt-2">
+<div  *ngIf="submitFormSuccess" [@fadeInOut] class="alert alert-success" role="alert">
+    Submit Success
+</div>
+<div  *ngIf="submitFormUnsuccess" [@fadeInOut] class="alert alert-danger" role="alert">
+    Submit Unsuccesful
+</div>
+
+<div *ngIf="officerSelectShow" class="row mt-2">
     <div class="col-2">
         <label class="col-form-label">Officer:</label>
     </div>
     <div class="col-4">
-        <select class="form-select">
-            <option>Joko</option>
-            <option>Herman</option>
+        <select class="form-select"  formControlName="officer">
+            <option *ngFor="let item of officerList; index as i;" [value]="item.id">{{item.firstName}} {{item.lastName}}</option>
         </select>
+    </div>
+    <div  class="col-2" *ngIf="bookingFormControl.officer.invalid">
+        *required
     </div>
 </div>
 
@@ -24,10 +36,13 @@
     </div>
     <div class="col-4">
         <div style="width:200px; display:inline-block;">
-        <input class="form-control" style="width:200px;" matInput [matDatepicker]="picker">
+        <input  type="text" class="form-control" style="width:200px;" formControlName="date" matInput [matDatepicker]="picker">
         </div>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+    </div>
+    <div  class="col-2" *ngIf="bookingFormControl.date.invalid">
+        *required
     </div>
 </div>
 
@@ -36,22 +51,26 @@
         <label class="col-form-label">Time:</label>
     </div>
     <div class="col-4">
-        <select class="form-select">
-            <option *ngFor="let item of timeRange; index as i;" >
+        <select class="form-select"  formControlName="time">
+            <option *ngFor="let item of timeRange; index as i;" [value]="item" >
                 {{item}}
             </option>
         </select>
+    </div>
+    <div  class="col-2" *ngIf="bookingFormControl.time.invalid">
+        *required
     </div>
 </div>
 
 
 <div class="row mt-3">
     <div class="col-2">
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" (click)="submitForm()">Submit</button>
     </div>
 </div>
    
 
+</form>
 
 
 </div>
