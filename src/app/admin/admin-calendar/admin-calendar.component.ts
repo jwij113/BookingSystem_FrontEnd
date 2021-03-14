@@ -20,10 +20,13 @@ export class AdminCalendarComponent implements OnInit {
   monthRange: Array<string>;
   timeRange : Array<String>;
   weekdayRange : Array<String>;
+  dateRange : Array<String> = [];
   dateParam: string = "";
   selectedOfficer:number = 0; 
   officerSelectShow:Boolean = false;
   officerList:Array<Officer> = [];
+  AllDay:CalendarResponse = new CalendarResponse();
+  isLoaded: Boolean = false;
 
   constructor(private http: HttpClient, private cookieService:CookieService) { 
     
@@ -49,9 +52,13 @@ export class AdminCalendarComponent implements OnInit {
   }
 
   ngOnInit(): void { 
-    this.initOfficerDropDownAndSetOfficer();
+    this.init();
   }
 
+  async init(){
+    await this.initOfficerDropDownAndSetOfficer();
+    await this.changeCalendarWeek();
+  }
 
   async initOfficerDropDownAndSetOfficer(){
 
@@ -97,9 +104,22 @@ export class AdminCalendarComponent implements OnInit {
     this.daySelected = parseInt(datesArr[0]);
   }
 
-  changeCalendarWeek(){
+
+
+  async changeCalendarWeek(){
     var date:String = this.daySelected+"/" + this.monthSelected + "/"+ this.yearSelected;
-    console.log(date);
+    var request = { date:date, 
+                    officer:this.selectedOfficer,
+                    sessionID:this.cookieService.get("sessionID")
+                  }
+    await this.http.post<CalendarResponse>("http://localhost:8080/booking/changeCalendarDate",  request).toPromise().then(
+      val=> { 
+              this.dateRange = <Array<string>> val.date;
+              this.AllDay =  val;
+              this.isLoaded = true;
+      },
+      error => console.log(error)
+    );
   }
 
 }
@@ -108,4 +128,8 @@ class Officer{
   id:number = 0
   firstName:string = ""
   lastName:string = ""
+}
+
+class CalendarResponse {
+  [key: string]: any
 }

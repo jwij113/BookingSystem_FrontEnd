@@ -65,7 +65,7 @@
 
 <div class="row mt-3">
     <div class="col-2">
-        <button type="button" class="btn btn-primary" (click)="submitForm()">Submit</button>
+        <button type="button" *ngIf="bookingFormControl.time.valid" class="btn btn-primary" (click)="submitForm()">Submit</button>
     </div>
 </div>
    

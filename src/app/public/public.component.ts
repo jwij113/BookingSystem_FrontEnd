@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-public',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicComponent implements OnInit {
 
-  constructor() { }
+  constructor( private cookieService:CookieService) { }
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    this.cookieService.delete('sessionID', '/');
+    window.location.href='/';
   }
 
 }

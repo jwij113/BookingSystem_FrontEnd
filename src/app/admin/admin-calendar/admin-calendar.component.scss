@@ -91,7 +91,7 @@
     background: rgb(235, 110, 93);
     text-align:center;
     padding-top:10px;
-    display:inline-block;
+    float:left;
     margin:1px;
 }
 
@@ -101,7 +101,7 @@
     background: rgb(255, 223, 164);
     text-align:center;
     padding-top:10px;
-    display:inline-block;
+    float:left;
     margin:1px;
 }
 
@@ -111,7 +111,7 @@
     background: #cfe; 
     text-align:center;
     padding-top:10px;
-    display:inline-block;
+    float:left;
 }
 
 .time{
@@ -120,5 +120,5 @@
     background: #cfe; 
     text-align:center;
     padding-top:10px;
-    display:inline-block;
+    float:left;
 }
